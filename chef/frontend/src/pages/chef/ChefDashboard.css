@@ -1,0 +1,118 @@
+.chef-dashboard {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.kanban-col {
+    background: var(--bg-color);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 4rem);
+}
+
+.kanban-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface-color);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.kanban-header h3 {
+    font-size: 1.125rem;
+    color: var(--text-main);
+}
+
+.kanban-count {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.kanban-body {
+    padding: 1rem;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.order-card {
+    padding: 1.25rem;
+    border-left: 4px solid var(--border-color);
+}
+
+.kanban-col:nth-child(1) .order-card { border-left-color: var(--danger); }
+.kanban-col:nth-child(2) .order-card { border-left-color: var(--warning); }
+.kanban-col:nth-child(3) .order-card { border-left-color: var(--success); }
+
+.order-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.order-number {
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.order-table {
+    background: var(--text-main);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.order-time {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.order-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.order-items-list li {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.order-items-list .qty {
+    font-weight: 700;
+    color: var(--primary-color);
+    min-width: 1.5rem;
+}
+
+.btn-prepare { background-color: var(--warning); color: #fff; }
+.btn-prepare:hover { background-color: #d97706; }
+
+.btn-ready { background-color: var(--success); color: #fff; }
+.btn-ready:hover { background-color: #059669; }
+
+.btn-deliver { background-color: var(--text-main); color: #fff; }
+.btn-deliver:hover { background-color: #374151; }

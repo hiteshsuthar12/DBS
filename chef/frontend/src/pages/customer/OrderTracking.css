@@ -1,0 +1,116 @@
+.order-tracking {
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+.tracking-card {
+    padding: 2rem;
+}
+
+.tracking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.tracking-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.tracking-steps::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px; /* center of 30px circle */
+    width: 2px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+
+.tracking-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--surface-color);
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.tracking-step.completed .step-circle {
+    background-color: var(--success);
+    border-color: var(--success);
+    color: white;
+}
+
+.tracking-step.current .step-circle {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2);
+}
+
+.step-label {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.tracking-step.completed .step-label {
+    color: var(--text-main);
+}
+
+.tracking-step.current .step-label {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.order-details-box {
+    background: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    margin-top: 2rem;
+}
+
+.order-details-box h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-muted);
+}
+
+.details-total {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}

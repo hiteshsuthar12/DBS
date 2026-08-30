@@ -1,0 +1,128 @@
+.menu-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.menu-filters {
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 70px; /* Below header */
+    background: var(--bg-color);
+    padding: 1rem 0;
+    z-index: 40;
+}
+
+.search-input {
+    margin-bottom: 1rem;
+}
+
+.category-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none; /* Firefox */
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none; /* Chrome */
+}
+
+.category-pill {
+    white-space: nowrap;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.category-pill.active, .category-pill:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card.unavailable {
+    opacity: 0.6;
+}
+
+.menu-img-wrapper {
+    height: 160px;
+    background-color: #f1f5f9;
+    overflow: hidden;
+}
+
+.menu-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.menu-card:hover .menu-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.menu-card-content {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.menu-card-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.menu-price {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.125rem;
+}
+
+.menu-desc {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.menu-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.add-to-cart-btn {
+    padding: 0.5rem 1rem;
+}
+
+.no-items {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+}
