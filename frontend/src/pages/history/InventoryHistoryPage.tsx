@@ -242,3 +242,4 @@ export const InventoryHistoryPage: React.FC = () => {
     </div>
   );
 };
+

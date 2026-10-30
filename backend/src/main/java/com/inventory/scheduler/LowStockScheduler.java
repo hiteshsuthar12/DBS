@@ -33,3 +33,4 @@ public class LowStockScheduler {
         log.info("Completed scheduled inventory stock alert synchronization across {} products.", products.size());
     }
 }
+

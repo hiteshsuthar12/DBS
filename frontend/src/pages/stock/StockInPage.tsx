@@ -306,3 +306,4 @@ export const StockInPage: React.FC = () => {
     </div>
   );
 };
+

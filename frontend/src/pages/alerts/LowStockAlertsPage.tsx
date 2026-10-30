@@ -248,3 +248,4 @@ export const LowStockAlertsPage: React.FC = () => {
     </div>
   );
 };
+

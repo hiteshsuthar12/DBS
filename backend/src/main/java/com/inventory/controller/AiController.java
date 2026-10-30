@@ -51,3 +51,4 @@ public class AiController {
         return ResponseEntity.ok(ApiResponse.success(aiService.classifyRisk(productId)));
     }
 }
+

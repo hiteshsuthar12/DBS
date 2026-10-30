@@ -207,3 +207,4 @@ mvn clean package -DskipTests
 - `inventory_alerts` (id, product_id, alert_type, current_stock, threshold_stock, status, message, resolved_at, created_at, updated_at)
 - `product_demand_history` (id, product_id, demand_date, quantity_demanded, transaction_count, created_at)
 - `audit_logs` (id, action, entity_name, entity_id, performed_by, details, ip_address, created_at)
+

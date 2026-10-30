@@ -228,3 +228,4 @@ class InventoryForecastingEngine:
             riskFactors=factors,
             actionRecommendation=action
         )
+

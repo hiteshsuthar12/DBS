@@ -73,3 +73,4 @@ public class DashboardDto {
         private List<AlertDto.AlertResponse> lowStockAlerts;
     }
 }
+

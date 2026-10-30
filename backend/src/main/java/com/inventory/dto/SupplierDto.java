@@ -62,3 +62,4 @@ public class SupplierDto {
         private Instant updatedAt;
     }
 }
+

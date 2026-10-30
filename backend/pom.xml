@@ -18,6 +18,7 @@
 
     <properties>
         <java.version>21</java.version>
+        <lombok.version>1.18.46</lombok.version>
         <jjwt.version>0.12.6</jjwt.version>
         <springdoc.version>2.6.0</springdoc.version>
     </properties>
@@ -91,7 +92,8 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Testing -->

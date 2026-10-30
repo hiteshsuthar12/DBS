@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: smart-inventory-backend-dev
+
+  datasource:
+    url: jdbc:h2:file:./data/inventory_dev;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;AUTO_SERVER=TRUE
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: false
+    show-sql: false
+
+  flyway:
+    enabled: false
+
+app:
+  jwt:
+    secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+    expiration-ms: 86400000
+  cors:
+    allowed-origins: http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173
+  ai-service:
+    url: http://localhost:8000
+    connect-timeout-ms: 3000
+    read-timeout-ms: 5000
+
+logging:
+  level:
+    com.inventory: INFO
+    org.springframework.security: WARN

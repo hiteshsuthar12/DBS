@@ -33,3 +33,4 @@ public interface InventoryAlertRepository extends JpaRepository<InventoryAlert, 
 
     long countByStatus(String status);
 }
+

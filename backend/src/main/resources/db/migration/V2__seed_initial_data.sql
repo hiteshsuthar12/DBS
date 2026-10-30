@@ -52,3 +52,4 @@ SELECT setval('roles_id_seq', (SELECT COALESCE(MAX(id), 1) FROM roles));
 SELECT setval('categories_id_seq', (SELECT COALESCE(MAX(id), 1) FROM categories));
 SELECT setval('suppliers_id_seq', (SELECT COALESCE(MAX(id), 1) FROM suppliers));
 SELECT setval('products_id_seq', (SELECT COALESCE(MAX(id), 1) FROM products));
+

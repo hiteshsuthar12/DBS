@@ -146,3 +146,4 @@ class AuthServiceTest {
         verify(userRepository, never()).save(any(User.class));
     }
 }
+

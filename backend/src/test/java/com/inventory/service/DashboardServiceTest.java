@@ -70,3 +70,4 @@ class DashboardServiceTest {
         assertThat(summary.getActiveAlerts()).isEqualTo(2L);
     }
 }
+

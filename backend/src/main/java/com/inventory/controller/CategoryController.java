@@ -27,3 +27,4 @@ public class CategoryController {
         return ResponseEntity.ok(ApiResponse.success(categoryRepository.findAll()));
     }
 }
+

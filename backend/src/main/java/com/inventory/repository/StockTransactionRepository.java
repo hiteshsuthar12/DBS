@@ -49,3 +49,4 @@ public interface StockTransactionRepository extends JpaRepository<StockTransacti
            "ORDER BY totalQty DESC")
     List<Object[]> findTopSellingProducts(Pageable pageable);
 }
+

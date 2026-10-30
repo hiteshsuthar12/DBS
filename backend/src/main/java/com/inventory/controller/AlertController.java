@@ -52,3 +52,4 @@ public class AlertController {
         return ResponseEntity.ok(ApiResponse.success(updated, "Alert status updated"));
     }
 }
+

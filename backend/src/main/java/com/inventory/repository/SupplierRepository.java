@@ -25,3 +25,4 @@ public interface SupplierRepository extends JpaRepository<Supplier, Long> {
     @Query("SELECT COUNT(p) FROM Product p WHERE p.supplier.id = :supplierId")
     long countProductsBySupplierId(@Param("supplierId") Long supplierId);
 }
+

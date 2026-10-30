@@ -112,3 +112,4 @@ npm run dev
 | **Administrator** | `admin` | `Admin@123` | Complete system access, user management, deletions |
 | **Inventory Manager** | `manager` | `Manager@123` | Product catalog, supplier management, stock-in, alerts |
 | **Operations Staff** | `staff` | `Staff@123` | Stock-out issuing, viewing inventory, history audit |
+

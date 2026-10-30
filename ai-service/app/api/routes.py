@@ -25,3 +25,4 @@ def forecast_demand(payload: ProductPredictionInput):
 @router.post("/classify/risk", response_model=RiskClassificationOutput)
 def classify_risk(payload: ProductPredictionInput):
     return InventoryForecastingEngine.classify_risk(payload)
+

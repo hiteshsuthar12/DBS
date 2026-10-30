@@ -156,3 +156,4 @@ class StockServiceTest {
         verify(transactionRepository, never()).save(any(StockTransaction.class));
     }
 }
+

@@ -84,3 +84,4 @@ public class StockDto {
         private Instant createdAt;
     }
 }
+

@@ -127,3 +127,4 @@ CREATE INDEX IF NOT EXISTS idx_transactions_date ON stock_transactions(transacti
 CREATE INDEX IF NOT EXISTS idx_transactions_type ON stock_transactions(transaction_type);
 CREATE INDEX IF NOT EXISTS idx_alerts_product_status ON inventory_alerts(product_id, status);
 CREATE INDEX IF NOT EXISTS idx_demand_history_product_date ON product_demand_history(product_id, demand_date);
+

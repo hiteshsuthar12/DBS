@@ -23,3 +23,4 @@ public interface ProductDemandHistoryRepository extends JpaRepository<ProductDem
     @Query("SELECT h FROM ProductDemandHistory h WHERE h.demandDate >= :since ORDER BY h.demandDate ASC")
     List<ProductDemandHistory> findAllRecentDemand(@Param("since") LocalDate since);
 }
+

@@ -20,3 +20,4 @@ describe('Smart Inventory Application', () => {
     expect(screen.getByRole('button', { name: /^Staff$/i })).toBeInTheDocument();
   });
 });
+

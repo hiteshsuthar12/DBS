@@ -70,3 +70,4 @@ public class AuthDto {
         private Boolean isActive;
     }
 }
+

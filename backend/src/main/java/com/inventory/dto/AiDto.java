@@ -101,3 +101,4 @@ public class AiDto {
         private List<ReorderRecommendationResponse> topRecommendations;
     }
 }
+

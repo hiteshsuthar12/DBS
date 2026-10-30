@@ -39,3 +39,4 @@ public class AlertDto {
         private String status;
     }
 }
+

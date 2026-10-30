@@ -50,3 +50,4 @@ public class UserController {
         return ResponseEntity.ok(ApiResponse.success(updated, "User role updated"));
     }
 }
+

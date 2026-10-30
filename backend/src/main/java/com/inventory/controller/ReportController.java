@@ -71,3 +71,4 @@ public class ReportController {
                 .body(new InputStreamResource(stream));
     }
 }
+

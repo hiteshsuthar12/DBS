@@ -61,3 +61,4 @@ logging:
     com.inventory: INFO
     org.springframework.security: WARN
     org.hibernate: WARN
+

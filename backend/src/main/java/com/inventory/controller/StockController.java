@@ -74,3 +74,4 @@ public class StockController {
         return ResponseEntity.ok(ApiResponse.success(history));
     }
 }
+

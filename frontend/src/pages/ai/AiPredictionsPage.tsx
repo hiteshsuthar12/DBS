@@ -432,3 +432,4 @@ export const AiPredictionsPage: React.FC = () => {
     </div>
   );
 };
+

@@ -60,3 +60,4 @@ class RiskClassificationOutput(BaseModel):
     riskLevel: str
     riskFactors: List[str]
     actionRecommendation: str
+

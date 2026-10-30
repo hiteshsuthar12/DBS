@@ -79,3 +79,4 @@ public class GlobalExceptionHandler {
                 .body(ApiResponse.error("An unexpected internal error occurred: " + ex.getMessage()));
     }
 }
+

@@ -39,3 +39,4 @@ logging:
   level:
     com.inventory: WARN
     org.springframework: WARN
+
