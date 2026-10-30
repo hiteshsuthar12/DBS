@@ -1,0 +1,24 @@
+# Compiled Java binaries
+**/target/
+*.class
+
+# Node / Frontend
+**/node_modules/
+**/dist/
+frontend/.env.local
+npm-debug.log*
+
+# Python / AI
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+
+# IDE & OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
