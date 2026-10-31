@@ -57,8 +57,8 @@ export const SettingsPage: React.FC = () => {
           <div className="flex items-center gap-2">
             <Database className="w-5 h-5 text-slate-700" />
             <div>
-              <p className="text-xs font-bold text-slate-900">PostgreSQL 18</p>
-              <p className="text-[11px] font-mono text-slate-400">Flyway Migrations V1-V2</p>
+              <p className="text-xs font-bold text-slate-900">MongoDB 7.0</p>
+              <p className="text-[11px] font-mono text-slate-400">Document Store • Port 27017</p>
             </div>
           </div>
         </div>

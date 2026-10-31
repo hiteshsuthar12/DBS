@@ -1,14 +1,16 @@
 package com.inventory.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 
-@Entity
-@Table(name = "stock_transactions")
+@Document(collection = "stock_transactions")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,49 +19,38 @@ import java.time.Instant;
 public class StockTransaction {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "product_id", nullable = false)
+    @DBRef
     private Product product;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "supplier_id")
+    @DBRef
     private Supplier supplier;
 
-    @Column(name = "transaction_type", nullable = false, length = 30)
+    @Indexed
     private String transactionType; // IN, SALE, DAMAGED, EXPIRED, INTERNAL_USAGE, OTHER
 
-    @Column(nullable = false)
     private Integer quantity;
 
-    @Column(name = "previous_stock", nullable = false)
     private Integer previousStock;
 
-    @Column(name = "updated_stock", nullable = false)
     private Integer updatedStock;
 
-    @Column(name = "unit_price", nullable = false, precision = 12, scale = 2)
     @Builder.Default
     private BigDecimal unitPrice = BigDecimal.ZERO;
 
-    @Column(name = "reference_number", nullable = false, length = 100)
+    @Indexed
     private String referenceNumber;
 
-    @Column(columnDefinition = "TEXT")
     private String remarks;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "performed_by_user_id")
+    @DBRef
     private User performedByUser;
 
-    @Column(name = "transaction_date", nullable = false)
+    @Indexed
     @Builder.Default
     private Instant transactionDate = Instant.now();
 
-    @CreationTimestamp
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @CreatedDate
     private Instant createdAt;
 }
-

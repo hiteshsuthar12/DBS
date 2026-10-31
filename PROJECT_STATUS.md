@@ -2,7 +2,7 @@
 ## Smart Inventory Management System – AI-Powered Inventory & Stock Optimization Platform
 
 **Project Status:** COMPLETED & PRODUCTION READY  
-**Architecture:** Distributed Multi-Tier (React TS Frontend + Java Spring Boot Core + PostgreSQL + Python FastAPI AI Service)  
+**Architecture:** Distributed Multi-Tier (React TS Frontend + Java Spring Boot Core + MongoDB + Python FastAPI AI Service)  
 **Compilation & Build Health:** 100% Passed (Backend: Maven BUILD SUCCESS; Frontend: Vite Production Build Succeeded; AI Service: Pytest 100% Passed)
 
 ---
@@ -79,7 +79,7 @@ docker compose up --build
 - Frontend: `http://localhost:3000`
 - Backend API & Swagger: `http://localhost:8080/swagger-ui.html`
 - AI FastAPI Service: `http://localhost:8000/docs`
-- PostgreSQL: `localhost:5432`
+- MongoDB: `localhost:27017`
 
 ### Option B: Local Development Execution
 

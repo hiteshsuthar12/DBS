@@ -1,10 +1,11 @@
 package com.inventory.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "roles")
+@Document(collection = "roles")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -13,13 +14,10 @@ import lombok.*;
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true, length = 50)
+    @Indexed(unique = true)
     private String name; // ROLE_ADMIN, ROLE_INVENTORY_MANAGER, ROLE_STAFF
 
-    @Column(length = 255)
     private String description;
 }
-

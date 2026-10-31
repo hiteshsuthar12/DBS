@@ -1,13 +1,14 @@
 package com.inventory.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Instant;
 
-@Entity
-@Table(name = "audit_logs")
+@Document(collection = "audit_logs")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -16,29 +17,21 @@ import java.time.Instant;
 public class AuditLog {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 100)
     private String action;
 
-    @Column(name = "entity_name", nullable = false, length = 50)
     private String entityName;
 
-    @Column(name = "entity_id", length = 50)
     private String entityId;
 
-    @Column(name = "performed_by", nullable = false, length = 100)
     private String performedBy;
 
-    @Column(columnDefinition = "TEXT")
     private String details;
 
-    @Column(name = "ip_address", length = 50)
     private String ipAddress;
 
-    @CreationTimestamp
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @CreatedDate
+    @Indexed
     private Instant createdAt;
 }
-

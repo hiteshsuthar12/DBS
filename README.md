@@ -1,7 +1,7 @@
 # Smart Inventory Management System
 ## AI-Powered Inventory & Stock Optimization Platform
 
-An enterprise-grade, multi-tier Smart Inventory Management System engineered with Java Spring Boot, React with TypeScript, PostgreSQL, and a Python FastAPI AI Forecasting Engine.
+An enterprise-grade, multi-tier Smart Inventory Management System engineered with Java Spring Boot, React with TypeScript, MongoDB, and a Python FastAPI AI Forecasting Engine.
 
 ---
 
@@ -17,7 +17,6 @@ flowchart TD
         SB["Spring Boot 3.3.5 Backend (Java 21/25)"]
         SEC["Spring Security + JWT Authentication"]
         SVC["Business Logic & Stock Transaction Engine"]
-        FLY["Flyway Database Migration Engine"]
     end
 
     subgraph AI Intelligence Tier
@@ -27,14 +26,13 @@ flowchart TD
     end
 
     subgraph Persistence Tier
-        DB[("PostgreSQL 16/18 Database")]
+        DB[("MongoDB 7.0 Document Database")]
     end
 
     UI -->|"RESTful HTTP / Axios"| SB
     SB --- SEC
     SB --- SVC
-    SVC -->|"Spring Data JPA / Atomic Transactions"| DB
-    FLY -->|"Schema Migrations (V1, V2)"| DB
+    SVC -->|"Spring Data MongoDB / Document Store"| DB
     SVC -->|"Internal HTTP Integration"| PY
     PY --- ML
     PY --- EOQ
@@ -44,9 +42,9 @@ flowchart TD
 
 ## 2. Technology Stack
 
-- **Backend:** Java 21 / 25, Spring Boot 3.3.5, Spring Security, Spring Data JPA, Hibernate, JWT (`jjwt 0.12.6`), Bean Validation, Maven, Springdoc OpenAPI 2.6.0 (Swagger UI).
+- **Backend:** Java 21 / 25, Spring Boot 3.3.5, Spring Security, Spring Data MongoDB, JWT (`jjwt 0.12.6`), Bean Validation, Maven, Springdoc OpenAPI 2.6.0 (Swagger UI).
 - **Frontend:** React 18, TypeScript, Vite, Tailwind CSS, Lucide React, Recharts, React Router v6, Axios.
-- **Database:** PostgreSQL 16 / 18, Flyway database schema migrations (`V1__init_schema.sql`, `V2__seed_initial_data.sql`).
+- **Database:** MongoDB 7.0 Document Database with Spring Data Mongo indexing and sequence generators.
 - **AI/ML Service:** Python 3.11, FastAPI, Pandas, NumPy, Scikit-learn, Joblib.
 - **DevOps & QA:** Docker, Docker Compose, JUnit 5, Mockito, Pytest, Vitest, React Testing Library.
 
@@ -104,7 +102,7 @@ flowchart TD
 
 ### Option 1: Docker Compose (Recommended)
 
-Start the entire platform (PostgreSQL, Spring Boot Backend, Python AI Service, React Frontend) in one command:
+Start the entire platform (MongoDB, Spring Boot Backend, Python AI Service, React Frontend) in one command:
 
 ```bash
 docker compose up --build
@@ -114,7 +112,7 @@ docker compose up --build
 - **Web Frontend:** [http://localhost:3000](http://localhost:3000)
 - **Spring Boot Backend & Swagger UI:** [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 - **Python FastAPI Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
-- **PostgreSQL Database:** `localhost:5432` (User: `postgres`, Password: `postgres`, DB: `inventory_db`)
+- **MongoDB Database:** `localhost:27017` (User: `root`, Password: `root`, DB: `inventory_db`)
 
 ---
 

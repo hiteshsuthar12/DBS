@@ -63,7 +63,7 @@ export const Login: React.FC = () => {
             Predict stock-outs. Prevent shortages. Automate reorders.
           </h2>
           <p className="text-sm text-slate-400 leading-relaxed">
-            Real-time PostgreSQL transactions powered by Spring Boot backend business logic and Python FastAPI demand forecasting models.
+            Real-time MongoDB transactions powered by Spring Boot backend business logic and Python FastAPI demand forecasting models.
           </p>
           <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-800/80">
             <div>

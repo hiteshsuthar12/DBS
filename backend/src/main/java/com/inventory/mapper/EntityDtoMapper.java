@@ -50,7 +50,7 @@ public class EntityDtoMapper {
                 .supplierId(product.getSupplier() != null ? product.getSupplier().getId() : null)
                 .supplierName(product.getSupplier() != null ? product.getSupplier().getSupplierName() : null)
                 .stockStatus(stockStatus)
-                .version(product.getVersion())
+                .version(product.getVersion() != null ? product.getVersion() : 0L)
                 .createdAt(product.getCreatedAt())
                 .updatedAt(product.getUpdatedAt())
                 .build();

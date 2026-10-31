@@ -1,19 +1,19 @@
 services:
-  # 1. POSTGRESQL DATABASE
-  postgres:
-    image: postgres:16-alpine
-    container_name: smart_inventory_postgres
+  # 1. MONGODB DATABASE
+  mongodb:
+    image: mongo:7.0
+    container_name: smart_inventory_mongodb
     restart: always
     environment:
-      POSTGRES_DB: ${DB_NAME:-inventory_db}
-      POSTGRES_USER: ${DB_USERNAME:-postgres}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME:-root}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-root}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE:-inventory_db}
     ports:
-      - "5432:5432"
+      - "27017:27017"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - mongodb_data:/data/db
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d inventory_db"]
+      test: ["CMD-SHELL", "mongosh --eval 'db.adminCommand(\"ping\")' --quiet || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -45,14 +45,13 @@ services:
     container_name: smart_inventory_backend
     restart: always
     depends_on:
-      postgres:
+      mongodb:
         condition: service_healthy
       ai-service:
         condition: service_healthy
     environment:
-      DB_URL: jdbc:postgresql://postgres:5432/${DB_NAME:-inventory_db}
-      DB_USERNAME: ${DB_USERNAME:-postgres}
-      DB_PASSWORD: ${DB_PASSWORD:-postgres}
+      SPRING_PROFILES_ACTIVE: prod
+      MONGODB_URI: mongodb://${MONGO_USERNAME:-root}:${MONGO_PASSWORD:-root}@mongodb:27017/${MONGO_DATABASE:-inventory_db}?authSource=admin
       JWT_SECRET: ${JWT_SECRET:-404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
       JWT_EXPIRATION_MS: ${JWT_EXPIRATION_MS:-86400000}
       AI_SERVICE_URL: http://ai-service:8000
@@ -77,10 +76,9 @@ services:
       - inventory_network
 
 volumes:
-  postgres_data:
+  mongodb_data:
     driver: local
 
 networks:
   inventory_network:
     driver: bridge
-

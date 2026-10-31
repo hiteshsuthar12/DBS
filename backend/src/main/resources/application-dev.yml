@@ -5,24 +5,10 @@ spring:
   application:
     name: smart-inventory-backend-dev
 
-  datasource:
-    url: jdbc:h2:file:./data/inventory_dev;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;AUTO_SERVER=TRUE
-    username: sa
-    password: ""
-    driver-class-name: org.h2.Driver
-
-  jpa:
-    open-in-view: false
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
-        format_sql: false
-    show-sql: false
-
-  flyway:
-    enabled: false
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/inventory_dev_db}
+      auto-index-creation: true
 
 app:
   jwt:
@@ -39,3 +25,4 @@ logging:
   level:
     com.inventory: INFO
     org.springframework.security: WARN
+

@@ -7,33 +7,10 @@ spring:
   application:
     name: smart-inventory-backend
 
-  datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/inventory_db}
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:postgres}
-    driver-class-name: org.postgresql.Driver
-    hikari:
-      maximum-pool-size: 15
-      minimum-idle: 5
-      idle-timeout: 300000
-      connection-timeout: 20000
-
-  jpa:
-    open-in-view: false
-    hibernate:
-      ddl-auto: validate
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-        jdbc:
-          batch_size: 25
-    show-sql: false
-
-  flyway:
-    enabled: true
-    baseline-on-migrate: true
-    locations: classpath:db/migration
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/inventory_db}
+      auto-index-creation: true
 
 # JWT Security Configuration
 app:
@@ -60,5 +37,4 @@ logging:
   level:
     com.inventory: INFO
     org.springframework.security: WARN
-    org.hibernate: WARN
-
+    org.springframework.data.mongodb: WARN
